@@ -48,18 +48,18 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/will/Desktop/vslam/项目代码/8.三角测量
+CMAKE_SOURCE_DIR = /home/yuqing/cyq/code/vslamcyq/VSLAM/8.三角测量
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/will/Desktop/vslam/项目代码/8.三角测量/build
+CMAKE_BINARY_DIR = /home/yuqing/cyq/code/vslamcyq/VSLAM/8.三角测量/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/Desktop/vslam/项目代码/8.三角测量/build/CMakeFiles /home/will/Desktop/vslam/项目代码/8.三角测量/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/vslamcyq/VSLAM/8.三角测量/build/CMakeFiles /home/yuqing/cyq/code/vslamcyq/VSLAM/8.三角测量/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/Desktop/vslam/项目代码/8.三角测量/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/vslamcyq/VSLAM/8.三角测量/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -157,8 +157,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
 	@echo "... triangulation"
+	@echo "... rebuild_cache"
 	@echo "... triangulation.o"
 	@echo "... triangulation.i"
 	@echo "... triangulation.s"
